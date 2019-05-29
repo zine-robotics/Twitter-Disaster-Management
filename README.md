@@ -1,6 +1,6 @@
-#Twitter Usage for Disaster Management
+# Twitter Usage for Disaster Management
 
-##Goals:
+## Goals:
 The great demonstrable strength of Twitter is a crisis-detector network, enabling a crowd-sourcing process, 
 1. automatic detection(detection of tweets that appear to be containing some crisis-related data),
 2. aggregation(combining all of the related data and seperating the data)
