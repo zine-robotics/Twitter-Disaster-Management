@@ -13,7 +13,7 @@ try:
     tweetCriteria.querySearch = "#floods #india"
     tweetCriteria.since="2017-01-01"
     tweetCriteria.until="2019-01-01"
-    tweetCriteria.maxTweets = 100
+    tweetCriteria.maxTweets = 300
 
     outputFile = open(outputFileName, "w+", encoding="utf8")
     outputFile.write('date,username,to,replies,retweets,favorites,text,geo,mentions,hashtags,id,permalink\n')
