@@ -10,32 +10,30 @@ try:
     tweetCriteria = got.manager.TweetCriteria()
     outputFileName = "./tweet.csv"
     debug = False
-    tweetCriteria.querySearch = "#CycloneFani"
-    tweetCriteria.since="2017-01-01"
-    tweetCriteria.until="2019-06-01"
-    tweetCriteria.maxTweets = 300
+    tweetCriteria.querySearch = "#KeralaFloods"
+    tweetCriteria.since="2018-08-07"
+    tweetCriteria.until="2019-06-07"
+    tweetCriteria.maxTweets = 1500
+    tweetCriteria.lang = "en"
+    tweetCriteria.topTweets = True
+    
 
     outputFile = open(outputFileName, "w+", encoding="utf8")
-    outputFile.write('date,username,to,replies,retweets,favorites,text,geo,mentions,hashtags,id,permalink\n')
+    outputFile.write('date,username,retweets,text,mentions,hashtags\n')
     
     cnt = 0
     def recieveBuffer(tweets):
         global cnt
         for t in tweets:
-            data = [t.date.strftime("%Y-%m-%d %H:%M:%S"),
-                t.username,
-                t.to or '',
-                t.replies,
-                t.retweets,
-                t.favorites,
-                '"'+t.text.replace('"','""')+'"',
-                t.geo,
-                t.mentions,
-                t.hashtags,
-                t.id,
-                t.permalink]
-            data[:] = [i if isinstance(i, str) else str(i) for i in data]
-            outputFile.write(','.join(data) + '\n')
+            if t.text != '':
+                data = [t.date.strftime("%Y-%m-%d %H:%M:%S"),
+                    t.username,
+                    t.retweets,
+                    '"'+t.text.replace('"','""')+'"',
+                    t.mentions,
+                    t.hashtags]
+                data[:] = [i if isinstance(i, str) else str(i) for i in data]
+                outputFile.write(','.join(data) + '\n')
 
         outputFile.flush()
         cnt += len(tweets)
