@@ -10,9 +10,9 @@ try:
     tweetCriteria = got.manager.TweetCriteria()
     outputFileName = "./tweet.csv"
     debug = False
-    tweetCriteria.querySearch = "#floods #india"
+    tweetCriteria.querySearch = "#CycloneFani"
     tweetCriteria.since="2017-01-01"
-    tweetCriteria.until="2019-01-01"
+    tweetCriteria.until="2019-06-01"
     tweetCriteria.maxTweets = 300
 
     outputFile = open(outputFileName, "w+", encoding="utf8")
