@@ -12,10 +12,9 @@ try:
     debug = False
     tweetCriteria.querySearch = "#KeralaFloods"
     tweetCriteria.since="2018-08-07"
-    tweetCriteria.until="2019-06-07"
-    tweetCriteria.maxTweets = 1500
+    tweetCriteria.until="2018-08-17"
+    tweetCriteria.maxTweets = 20000
     tweetCriteria.lang = "en"
-    tweetCriteria.topTweets = True
     
 
     outputFile = open(outputFileName, "w+", encoding="utf8")
