@@ -11,8 +11,8 @@ try:
     outputFileName = "./tweet1.csv"
     debug = False
     tweetCriteria.querySearch = "#KeralaFloods"
-    tweetCriteria.since="2018-08-07"
-    tweetCriteria.until="2018-08-10"
+    tweetCriteria.since="2018-08-16"
+    tweetCriteria.until="2018-08-20"
     tweetCriteria.maxTweets = 35000
     tweetCriteria.lang = "en"
     
